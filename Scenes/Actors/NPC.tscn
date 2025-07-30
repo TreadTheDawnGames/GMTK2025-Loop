@@ -1,19 +1,94 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3elxvfah6j0q"]
+[gd_scene load_steps=11 format=3 uid="uid://c3elxvfah6j0q"]
 
 [ext_resource type="Script" uid="uid://cr25nn2htty2l" path="res://Scripts/AI/NPC.gd" id="1_7r31d"]
+[ext_resource type="Texture2D" uid="uid://dyxang1vai0xa" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0096.png" id="2_arg5b"]
 [ext_resource type="Texture2D" uid="uid://bl6qmxmwoia70" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0097.png" id="2_dfrxh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfrxh"]
+atlas = ExtResource("2_arg5b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arg5b"]
+atlas = ExtResource("2_dfrxh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_et4ff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfrxh")
+}],
+"loop": true,
+"name": &"helmet_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arg5b")
+}],
+"loop": true,
+"name": &"helmet_open",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7r31d"]
 radius = 5.0
 height = 16.0
 
-[node name="Npc" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_dfrxh"]
+resource_name = "bob_idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_arg5b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_et4ff"]
+_data = {
+&"RESET": SubResource("Animation_arg5b"),
+&"bob_idle": SubResource("Animation_dfrxh")
+}
+
+[node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_7r31d")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dfrxh")
+[node name="SpriteContainer" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="SpriteContainer"]
+sprite_frames = SubResource("SpriteFrames_et4ff")
+animation = &"helmet_open"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7r31d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_et4ff")
+}
+
+[node name="Timer" type="Timer" parent="."]
