@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsnkgwt4w20go"]
 
 [ext_resource type="Script" uid="uid://2p4g3cajqel3" path="res://Scripts/PuzzleElements/minecart.gd" id="1_2rmhj"]
-[ext_resource type="Texture2D" uid="uid://w6dhjy54d0e3" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0055.png" id="1_8wcop"]
+[ext_resource type="Texture2D" uid="uid://c7ckwdup4hxdx" path="res://Assets/Visual/Sprites/Minecart.png" id="2_2rmhj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2rmhj"]
 radius = 7.07107
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8wcop"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rmhj"]
+size = Vector2(16, 16)
 
 [node name="Minecart" type="CharacterBody2D"]
 script = ExtResource("1_2rmhj")
@@ -15,11 +15,13 @@ script = ExtResource("1_2rmhj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2rmhj")
 
-[node name="Tile0055" type="Sprite2D" parent="."]
-position = Vector2(0, -2)
-texture = ExtResource("1_8wcop")
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_2rmhj")
+hframes = 3
+vframes = 3
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_8wcop")
+shape = SubResource("RectangleShape2D_2rmhj")

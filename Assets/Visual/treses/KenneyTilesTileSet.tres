@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dbbw0ly16fa7" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="1_w3loc"]
 [ext_resource type="PackedScene" uid="uid://lrdoilt00g0o" path="res://Scenes/PuzzleElements/button.tscn" id="2_ausjb"]
 [ext_resource type="PackedScene" uid="uid://cd7vswha7o6wo" path="res://Scenes/PuzzleElements/gate.tscn" id="3_mhrdi"]
-[ext_resource type="PackedScene" uid="uid://cipuj6o4g6p8e" path="res://Scenes/PuzzleElements/rails.tscn" id="4_30bso"]
+[ext_resource type="PackedScene" uid="uid://cipuj6o4g6p8e" path="res://Scenes/PuzzleElements/rail.tscn" id="4_30bso"]
 [ext_resource type="PackedScene" uid="uid://dsnkgwt4w20go" path="res://Scenes/PuzzleElements/minecart.tscn" id="5_mhrdi"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_27ix6"]

@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 #TTDG: Doors use this array to check to make sure the AI can pass.
 var CollectedKeys : Array = []
+#TTDG: Publicize the want to go direction for minecarts.
+var WalkDir : Vector2 = Vector2.ZERO
 
 # A reference to the NavigationAgent2D node. Get this in _ready().
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
@@ -57,10 +59,10 @@ func _physics_process(_delta: float) -> void:
 				var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 				
 				# Calculate the direction from our current position to the next point.
-				var direction: Vector2 = global_position.direction_to(next_path_position)
+				WalkDir = global_position.direction_to(next_path_position)
 				
 				# Set velocity to move in that direction and normalize it.
-				velocity = direction.normalized() * speed
+				velocity = WalkDir.normalized() * speed
 			else:
 				# If we've somehow reached here but the signal hasn't fired, stop.
 				velocity = Vector2.ZERO
