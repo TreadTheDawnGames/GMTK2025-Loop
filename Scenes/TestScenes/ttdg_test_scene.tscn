@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://gwn670eeg81c"]
+
+[ext_resource type="PackedScene" uid="uid://cp2w7fv7ddxsb" path="res://Scenes/DungeonRooms/dungeon_room_test.tscn" id="1_72ndn"]
+
+[node name="TTDGTestScene" type="Node2D"]
+
+[node name="DungeonRoomFirst" parent="." instance=ExtResource("1_72ndn")]

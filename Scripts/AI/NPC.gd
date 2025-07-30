@@ -5,6 +5,9 @@ extends CharacterBody2D
 # The speed of the NPC
 @export var speed: float = 100.0
 
+#TTDG: Doors use this array to check to make sure the AI can pass.
+var CollectedKeys : Array = []
+
 # A reference to the NavigationAgent2D node. Get this in _ready().
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 

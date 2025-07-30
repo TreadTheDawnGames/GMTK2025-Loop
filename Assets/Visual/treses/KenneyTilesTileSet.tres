@@ -1,6 +1,10 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cy35y8hiap64k"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://cy35y8hiap64k"]
 
 [ext_resource type="Texture2D" uid="uid://dbbw0ly16fa7" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="1_w3loc"]
+[ext_resource type="PackedScene" uid="uid://lrdoilt00g0o" path="res://Scenes/PuzzleElements/button.tscn" id="2_ausjb"]
+[ext_resource type="PackedScene" uid="uid://cd7vswha7o6wo" path="res://Scenes/PuzzleElements/gate.tscn" id="3_mhrdi"]
+[ext_resource type="PackedScene" uid="uid://cipuj6o4g6p8e" path="res://Scenes/PuzzleElements/rails.tscn" id="4_30bso"]
+[ext_resource type="PackedScene" uid="uid://dsnkgwt4w20go" path="res://Scenes/PuzzleElements/minecart.tscn" id="5_mhrdi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xd7mu"]
 texture = ExtResource("1_w3loc")
@@ -149,5 +153,12 @@ texture = ExtResource("1_w3loc")
 10:11/0 = 0
 11:11/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_27ix6"]
+scenes/1/scene = ExtResource("2_ausjb")
+scenes/2/scene = ExtResource("3_mhrdi")
+scenes/4/scene = ExtResource("4_30bso")
+scenes/5/scene = ExtResource("5_mhrdi")
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_xd7mu")
+sources/1 = SubResource("TileSetScenesCollectionSource_27ix6")

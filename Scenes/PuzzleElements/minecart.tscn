@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsnkgwt4w20go"]
+[gd_scene load_steps=3 format=3 uid="uid://dsnkgwt4w20go"]
 
 [ext_resource type="Texture2D" uid="uid://w6dhjy54d0e3" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0055.png" id="1_8wcop"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8wcop"]
+radius = 7.0
 
 [node name="Minecart" type="Node2D"]
 
 [node name="Tile0055" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
 texture = ExtResource("1_8wcop")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_8wcop")
