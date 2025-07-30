@@ -9,11 +9,20 @@ var Pressed : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Area.mouse_entered.connect(ButtonInteraction.bind(true))
-	Area.mouse_exited.connect(ButtonInteraction.bind(false))
+	Area.body_entered.connect(Press)
+	Area.body_exited.connect(Unpress)
 	pass # Replace with function body.
 
 func ButtonInteraction(pressed : bool):
 	Sprite.frame_coords.y = 1 if pressed else 0
 	Pressed = pressed
+	var parent = get_parent() as PuzGate
+	parent.TryOpen()
+	return
+
+func Press(_node : Node2D):
+	ButtonInteraction(true)
+	return
+func Unpress(_node : Node2D):
+	ButtonInteraction(false)
 	return

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://du277vjl8renh"]
+[gd_scene load_steps=6 format=3 uid="uid://du277vjl8renh"]
 
 [ext_resource type="PackedScene" uid="uid://brxdh8d7000xf" path="res://Scenes/DungeonRooms/dungeon_room_base.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://cfm73x05hhxbi" path="res://Scripts/Managers/game_manager.gd" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://c3elxvfah6j0q" path="res://Scenes/Actors/NPC.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cd7vswha7o6wo" path="res://Scenes/PuzzleElements/gate.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://lrdoilt00g0o" path="res://Scenes/PuzzleElements/button.tscn" id="5_i6g32"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_wrm1d")
@@ -11,6 +13,12 @@ script = ExtResource("1_wrm1d")
 position = Vector2(128, 96)
 
 [node name="DungeonRoomBase" parent="." instance=ExtResource("1_ebmjs")]
+
+[node name="Gate" parent="." instance=ExtResource("4_wowpa")]
+position = Vector2(80, 94)
+
+[node name="Button" parent="Gate" instance=ExtResource("5_i6g32")]
+position = Vector2(11, 25)
 
 [node name="NPC" parent="." instance=ExtResource("2_qxrlw")]
 position = Vector2(178.66, 130.229)
