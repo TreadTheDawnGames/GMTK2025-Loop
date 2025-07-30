@@ -1,0 +1,78 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bs3iyvfobv2qm"]
+
+[ext_resource type="Texture2D" uid="uid://dbbw0ly16fa7" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="1_oyxak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kte06"]
+atlas = ExtResource("1_oyxak")
+region = Rect2(48, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn3jf"]
+atlas = ExtResource("1_oyxak")
+region = Rect2(64, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0qkf"]
+atlas = ExtResource("1_oyxak")
+region = Rect2(80, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_au7xo"]
+atlas = ExtResource("1_oyxak")
+region = Rect2(0, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp8v7"]
+atlas = ExtResource("1_oyxak")
+region = Rect2(16, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvp0e"]
+atlas = ExtResource("1_oyxak")
+region = Rect2(32, 176, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kte06")
+}],
+"loop": true,
+"name": &"DownL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn3jf")
+}],
+"loop": true,
+"name": &"DownM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0qkf")
+}],
+"loop": true,
+"name": &"DownR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_au7xo")
+}],
+"loop": true,
+"name": &"UpL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp8v7")
+}],
+"loop": true,
+"name": &"UpM",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvp0e")
+}],
+"loop": true,
+"name": &"UpR",
+"speed": 5.0
+}]

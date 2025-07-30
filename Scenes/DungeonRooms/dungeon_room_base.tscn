@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://brxdh8d7000xf"]
 
-[ext_resource type="TileSet" uid="uid://cy35y8hiap64k" path="res://Assets/Visual/treses/KenneyTiles.tres" id="1_cpum0"]
+[ext_resource type="TileSet" uid="uid://cy35y8hiap64k" path="res://Assets/Visual/treses/KenneyTilesTileSet.tres" id="1_cpum0"]
 
 [node name="DungeonRoomBase" type="Node2D"]
 
