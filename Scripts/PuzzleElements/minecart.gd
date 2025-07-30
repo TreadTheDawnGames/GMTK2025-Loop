@@ -8,10 +8,7 @@ var Facing : FacingDir
 
 @onready var Sprite: Sprite2D = $Sprite
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
+var isOnRail : bool = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -38,11 +35,7 @@ func _process(delta: float) -> void:
 	#queue_redraw()
 	pass
 
-#func _draw() -> void:
-	#if(Area.get_overlapping_bodies().any(func(a): return a is NPC)):
-		#var npc : NPC = Area.get_overlapping_bodies().filter(func(a): return a is NPC)[0]
-		#var directionToNPC = global_position.direction_to(npc.global_position)
-		#draw_line(to_local(global_position), directionToNPC * 100, Color.YELLOW)
-		#
-		#draw_line(to_local(global_position), -((npc.WalkDir).normalized() - to_local(global_position).normalized())*100, Color.RED)
-	#return
+func _ready() -> void:
+	isOnRail = Area.get_overlapping_areas().any(func(a): a.owner is PuzRail)
+	print("isOnRail:" + str(isOnRail))
+	return

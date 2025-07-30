@@ -32,7 +32,7 @@ position = Vector2(176, 86)
 position = Vector2(192, 86)
 
 [node name="Minecart" parent="." instance=ExtResource("6_i6g32")]
-position = Vector2(208, 86)
+position = Vector2(184, 86)
 
 [node name="NPC" parent="." instance=ExtResource("2_qxrlw")]
 position = Vector2(178.66, 130.229)
