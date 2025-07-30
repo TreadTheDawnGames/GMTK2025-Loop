@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://cy35y8hiap64k"]
+[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://cy35y8hiap64k"]
 
 [ext_resource type="Texture2D" uid="uid://dbbw0ly16fa7" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="1_w3loc"]
 [ext_resource type="PackedScene" uid="uid://lrdoilt00g0o" path="res://Scenes/PuzzleElements/button.tscn" id="2_ausjb"]

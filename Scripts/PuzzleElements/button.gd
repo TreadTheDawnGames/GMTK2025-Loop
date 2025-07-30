@@ -9,6 +9,11 @@ var Pressed : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Area.mouse_entered.connect(func(): Pressed = true)
-	Area.mouse_exited.connect(func(): Pressed = false)
+	Area.mouse_entered.connect(ButtonInteraction.bind(true))
+	Area.mouse_exited.connect(ButtonInteraction.bind(false))
 	pass # Replace with function body.
+
+func ButtonInteraction(pressed : bool):
+	Sprite.frame_coords.y = 1 if pressed else 0
+	Pressed = pressed
+	return

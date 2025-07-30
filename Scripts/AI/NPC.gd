@@ -30,7 +30,7 @@ func _ready() -> void:
 
 
 # _physics_process() is called every physics frame. Ideal for movement and state logic.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# A 'match' statement is a clean way to handle different states.
 	# It's like a switch statement in other languages.
 	match current_state:
