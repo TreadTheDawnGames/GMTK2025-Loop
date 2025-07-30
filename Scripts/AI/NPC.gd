@@ -47,8 +47,8 @@ func _physics_process(_delta: float) -> void:
 				# Calculate the direction from our current position to the next point.
 				var direction: Vector2 = global_position.direction_to(next_path_position)
 				
-				# Set velocity to move in that direction and normalize it.
-				velocity = direction.normalized() * speed
+				# Set our velocity to move in that direction.
+				velocity = direction * speed
 			else:
 				# If we've somehow reached here but the signal hasn't fired, stop.
 				velocity = Vector2.ZERO

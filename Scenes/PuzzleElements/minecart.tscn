@@ -1,11 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsnkgwt4w20go"]
+[gd_scene load_steps=5 format=3 uid="uid://dsnkgwt4w20go"]
 
+[ext_resource type="Script" uid="uid://2p4g3cajqel3" path="res://Scripts/PuzzleElements/minecart.gd" id="1_2rmhj"]
 [ext_resource type="Texture2D" uid="uid://w6dhjy54d0e3" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0055.png" id="1_8wcop"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8wcop"]
-radius = 7.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_2rmhj"]
+radius = 7.07107
 
-[node name="Minecart" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8wcop"]
+radius = 8.0
+
+[node name="Minecart" type="CharacterBody2D"]
+script = ExtResource("1_2rmhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2rmhj")
 
 [node name="Tile0055" type="Sprite2D" parent="."]
 position = Vector2(0, -2)
