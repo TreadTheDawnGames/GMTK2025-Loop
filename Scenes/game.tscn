@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://du277vjl8renh"]
+[gd_scene load_steps=2 format=3 uid="uid://du277vjl8renh"]
+
+[ext_resource type="PackedScene" uid="uid://brxdh8d7000xf" path="res://Scenes/DungeonRooms/dungeon_room_base.tscn" id="1_ebmjs"]
 
 [node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 95)
+
+[node name="DungeonRoomBase" parent="." instance=ExtResource("1_ebmjs")]
