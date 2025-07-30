@@ -5,6 +5,9 @@ extends CharacterBody2D
 # The speed of the NPC
 @export var speed: float = 100.0
 
+#TTDG: Doors use this array to check to make sure the AI can pass.
+var CollectedKeys : Array = []
+
 # A reference to the NavigationAgent2D node. Get this in _ready().
 @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
@@ -27,7 +30,7 @@ func _ready() -> void:
 
 
 # _physics_process() is called every physics frame. Ideal for movement and state logic.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# A 'match' statement is a clean way to handle different states.
 	# It's like a switch statement in other languages.
 	match current_state:

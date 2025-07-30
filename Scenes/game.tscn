@@ -8,7 +8,7 @@
 script = ExtResource("1_wrm1d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(128, 95)
+position = Vector2(128, 96)
 
 [node name="DungeonRoomBase" parent="." instance=ExtResource("1_ebmjs")]
 

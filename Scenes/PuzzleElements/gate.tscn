@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cd7vswha7o6wo"]
+[gd_scene load_steps=4 format=3 uid="uid://cd7vswha7o6wo"]
 
+[ext_resource type="Script" uid="uid://ckr3vmi6vqb5p" path="res://Scripts/PuzzleElements/gate.gd" id="1_kte06"]
 [ext_resource type="Texture2D" uid="uid://datwl56qhu8v4" path="res://Assets/Visual/Sprites/Gate.png" id="1_oq10k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mw6fv"]
 size = Vector2(16, 16)
 
 [node name="Gate" type="Node2D"]
+script = ExtResource("1_kte06")
 
 [node name="Gate" type="Sprite2D" parent="."]
 texture = ExtResource("1_oq10k")
