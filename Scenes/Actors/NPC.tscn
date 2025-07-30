@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3elxvfah6j0q"]
+
+[ext_resource type="Script" uid="uid://cr25nn2htty2l" path="res://Scripts/AI/NPC.gd" id="1_7r31d"]
+[ext_resource type="Texture2D" uid="uid://bl6qmxmwoia70" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0097.png" id="2_dfrxh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7r31d"]
+
+[node name="Npc" type="CharacterBody2D"]
+script = ExtResource("1_7r31d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_dfrxh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+shape = SubResource("CapsuleShape2D_7r31d")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
