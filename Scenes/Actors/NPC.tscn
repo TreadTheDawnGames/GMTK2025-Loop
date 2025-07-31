@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3elxvfah6j0q"]
+[gd_scene load_steps=12 format=3 uid="uid://c3elxvfah6j0q"]
 
 [ext_resource type="Script" uid="uid://cr25nn2htty2l" path="res://Scripts/AI/NPC.gd" id="1_7r31d"]
 [ext_resource type="Texture2D" uid="uid://dyxang1vai0xa" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0096.png" id="2_arg5b"]
@@ -72,6 +72,10 @@ _data = {
 &"bob_idle": SubResource("Animation_dfrxh")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfrxh"]
+radius = 5.0
+height = 16.0
+
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_7r31d")
 
@@ -93,3 +97,9 @@ libraries = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_dfrxh")

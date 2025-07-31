@@ -129,3 +129,16 @@ func _play_helmet_close_sequence() -> void:
 	if current_state == State.IDLE:
 		# If still idle, resume the bobbing animation.
 		animation_player.play("bob_idle")
+		
+# This function handles unhandled input for the NPC.
+func _unhandled_input(event: InputEvent) -> void:
+	# Check if the input was a left mouse button press.
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		# Check if the mouse click is within the bounds of the NPC's collision shape.
+		# get_global_mouse_position() gets the click in world coordinates.
+		# to_local() converts it to coordinates relative to the NPC's origin.
+		# The CollisionShape2D's shape has a method to check if a point is inside it.
+		if $CollisionShape2D.shape.get_rect().has_point(to_local(get_global_mouse_position())):
+			print("NPC clicked")
+			# Mark the input as handled. This prevents the game_manager from also processing this click.
+			get_viewport().set_input_as_handled()
