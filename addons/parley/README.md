@@ -115,6 +115,6 @@ fixed a bug for yourself, please consider submitting a PR!
 
 <p align="center">
   <a href="https://github.com/bisterix-studio/parley/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=bisterix-studio/parley&columns=8" />
+	<img src="https://contrib.rocks/image?repo=bisterix-studio/parley&columns=8" />
   </a>
 </p>

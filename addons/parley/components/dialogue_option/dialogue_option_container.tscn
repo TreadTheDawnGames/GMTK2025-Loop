@@ -25,9 +25,9 @@ script = ExtResource("1_pntep")
 
 [node name="DialogueOptionMarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 15
+theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 15
+theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 5
 
 [node name="DialogueOptionLabel" type="RichTextLabel" parent="DialogueOptionMarginContainer"]
