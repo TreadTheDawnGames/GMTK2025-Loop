@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cipuj6o4g6p8e"]
+[gd_scene load_steps=4 format=3 uid="uid://cipuj6o4g6p8e"]
 
 [ext_resource type="Script" uid="uid://0cd2oi02km21" path="res://Scripts/PuzzleElements/rail.gd" id="1_7u01q"]
 [ext_resource type="Texture2D" uid="uid://bkvbh1n5p0quc" path="res://Assets/Visual/Sprites/Rails.png" id="1_stppf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tv6kd"]
-size = Vector2(16, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_stppf"]
-size = Vector2(8, 16)
+size = Vector2(16, 16)
 
 [node name="Rail" type="Node2D"]
 script = ExtResource("1_7u01q")
@@ -16,7 +13,6 @@ script = ExtResource("1_7u01q")
 texture = ExtResource("1_stppf")
 hframes = 6
 vframes = 3
-frame = 4
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-16, 0)
@@ -24,7 +20,3 @@ position = Vector2(-16, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_tv6kd")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(16, 0)
-shape = SubResource("RectangleShape2D_stppf")

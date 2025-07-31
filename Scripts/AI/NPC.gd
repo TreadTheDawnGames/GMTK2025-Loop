@@ -67,6 +67,11 @@ func _physics_process(_delta: float) -> void:
 				# If we've somehow reached here but the signal hasn't fired, stop.
 				velocity = Vector2.ZERO
 	
+	#var manualDir = Vector2(Input.get_axis("left","right"), Input.get_axis("up", "down"))
+	#if(manualDir.length() > 0.1):
+		#velocity = manualDir * speed
+		#pass
+	
 	# This function actually moves the character based on its velocity.
 	move_and_slide()
 
