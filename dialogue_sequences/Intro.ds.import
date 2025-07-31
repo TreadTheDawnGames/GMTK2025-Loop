@@ -1,0 +1,14 @@
+[remap]
+
+importer="parley_dialogue_sequence_ast_1.0.0"
+type="Resource"
+uid="uid://btl0te68jnm7j"
+path="res://.godot/imported/Intro.ds-e8df132bd84cc1782bc705501780b203.tres"
+
+[deps]
+
+source_file="res://dialogue_sequences/Intro.ds"
+dest_files=["res://.godot/imported/Intro.ds-e8df132bd84cc1782bc705501780b203.tres"]
+
+[params]
+

@@ -15,6 +15,10 @@ run/main_scene="uid://du277vjl8renh"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Parley="*res://addons/parley/parley_runtime.gd"
+
 [display]
 
 window/size/viewport_width=256
@@ -22,6 +26,14 @@ window/size/viewport_height=192
 window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/parley/plugin.cfg")
+
+[parley]
+
+stores/character_store_path="uid://b4xkjcuaq0wl5"
 
 [rendering]
 

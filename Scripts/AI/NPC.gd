@@ -20,6 +20,11 @@ var WalkDir : Vector2 = Vector2.ZERO
 @onready var animated_sprite: AnimatedSprite2D = $SpriteContainer/AnimatedSprite2D
 # A reference to the container for the sprite to allow bobbing without moving collision.
 @onready var sprite_container: Node2D = $SpriteContainer
+# Assign the dialogue sequence 
+@export var dialogue_sequence: ParleyDialogueSequenceAst  
+
+# Preload the ParleyContext class
+const ParleyContext = preload("res://addons/parley/models/parley_context.gd")
 
 # This enum defines the possible states the AI can be in.
 enum State {
@@ -140,5 +145,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		# The CollisionShape2D's shape has a method to check if a point is inside it.
 		if $CollisionShape2D.shape.get_rect().has_point(to_local(get_global_mouse_position())):
 			print("NPC clicked")
+			
+			# Start dialogue if sequence is assigned and we're not in editor
+			if not Engine.is_editor_hint() and dialogue_sequence:
+				var parley_runtime = get_node_or_null("/root/Parley")
+				if parley_runtime:
+					# Create a new ParleyContext instance
+					var context = ParleyContext.new()
+
+					parley_runtime.run_dialogue(context, dialogue_sequence)
 			# Mark the input as handled. This prevents the game_manager from also processing this click.
 			get_viewport().set_input_as_handled()

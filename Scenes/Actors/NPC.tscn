@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3elxvfah6j0q"]
+[gd_scene load_steps=13 format=3 uid="uid://c3elxvfah6j0q"]
 
 [ext_resource type="Script" uid="uid://cr25nn2htty2l" path="res://Scripts/AI/NPC.gd" id="1_7r31d"]
 [ext_resource type="Texture2D" uid="uid://dyxang1vai0xa" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0096.png" id="2_arg5b"]
 [ext_resource type="Texture2D" uid="uid://bl6qmxmwoia70" path="res://Assets/Visual/Sprites/kenney_tiny-dungeon/Tiles/tile_0097.png" id="2_dfrxh"]
+[ext_resource type="Resource" uid="uid://btl0te68jnm7j" path="res://dialogue_sequences/Intro.ds" id="2_et4ff"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dfrxh"]
 atlas = ExtResource("2_arg5b")
@@ -78,6 +79,7 @@ height = 16.0
 
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_7r31d")
+dialogue_sequence = ExtResource("2_et4ff")
 
 [node name="SpriteContainer" type="Node2D" parent="."]
 
