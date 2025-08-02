@@ -71,13 +71,43 @@ func _process(delta: float) -> void:
 				distToRail = global_position.distance_to(rail.global_position)
 		
 		#if the closest rail is a corner, do special corner stuff
+		#works
 		if(closestRail.RailDirection == RailDir.DownDiagNWES):
-			if(distToRail < 0.5):
-				print("really close")
-				Sprite.frame_coords = Vector2(0,2)
-				velocity = Vector2(0, 50)
-				Facing = RailDir.NorthSouth
+			#if(distToRail < 0.5):
+			print("really close")
+			Sprite.frame_coords = Vector2(0,2)
+			velocity = Vector2(-velocity.y, -velocity.x)
+			Facing = RailDir.NorthSouth if (Facing == RailDir.EastWest) else RailDir.EastWest
 			pass
+			
+		if(closestRail.RailDirection == RailDir.UpDiagNWES):
+			#if(distToRail < 0.5):
+			print("really close")
+			Sprite.frame_coords = Vector2(0,2)
+			velocity = Vector2(-velocity.y, -velocity.x)
+			Facing = RailDir.NorthSouth if (Facing == RailDir.EastWest) else RailDir.EastWest
+			pass
+		
+		#works
+		if(closestRail.RailDirection == RailDir.DownDiagNEWS):
+			#if(distToRail < 0.5):
+			print("really close")
+			Sprite.frame_coords = Vector2(2,2)
+			velocity = Vector2(velocity.y, velocity.x)
+			Facing = RailDir.NorthSouth if (Facing == RailDir.EastWest) else RailDir.EastWest
+			pass
+			
+		if(closestRail.RailDirection == RailDir.UpDiagNEWS): 
+			#if(distToRail < 0.5):
+			print("really close")
+			Sprite.frame_coords = Vector2(2,2)
+			velocity = Vector2(velocity.y, velocity.x)
+			Facing = RailDir.NorthSouth if (Facing == RailDir.EastWest) else RailDir.EastWest
+			pass
+		
+			pass
+	
+	
 	move_and_slide()
 	queue_redraw()
 	pass
@@ -100,7 +130,7 @@ func CheckGetOnRail(node : Node2D):
 	if(Facing == RailDir.EastWest):
 		global_position.y = node.global_position.y
 	else:
-		global_position.x = node.global_position.x +16
+		global_position.x = node.global_position.x + 16
 		pass
 		
 		

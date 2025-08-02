@@ -20,29 +20,40 @@ position = Vector2(128, 96)
 position = Vector2(80, 94)
 
 [node name="Button" parent="Gate" instance=ExtResource("5_i6g32")]
-position = Vector2(11, 25)
+position = Vector2(12, 25)
 
 [node name="Rail" parent="." instance=ExtResource("6_1l0tm")]
-position = Vector2(160, 86)
+position = Vector2(56, 120)
 RailDirection = 1
 
 [node name="Rail2" parent="." instance=ExtResource("6_1l0tm")]
-position = Vector2(176, 86)
-RailDirection = 1
+position = Vector2(72, 120)
+RailDirection = 3
 
 [node name="Rail3" parent="." instance=ExtResource("6_1l0tm")]
-position = Vector2(192, 86)
-RailDirection = 1
+position = Vector2(72, 136)
 
 [node name="Rail4" parent="." instance=ExtResource("6_1l0tm")]
-position = Vector2(144, 86)
+position = Vector2(40, 120)
 RailDirection = 5
 
 [node name="Rail5" parent="." instance=ExtResource("6_1l0tm")]
-position = Vector2(144, 102)
+position = Vector2(40, 136)
+
+[node name="Rail6" parent="." instance=ExtResource("6_1l0tm")]
+position = Vector2(40, 152)
+RailDirection = 2
+
+[node name="Rail7" parent="." instance=ExtResource("6_1l0tm")]
+position = Vector2(56, 152)
+RailDirection = 1
+
+[node name="Rail8" parent="." instance=ExtResource("6_1l0tm")]
+position = Vector2(72, 152)
+RailDirection = 4
 
 [node name="Minecart" parent="." instance=ExtResource("6_i6g32")]
-position = Vector2(164, 106)
+position = Vector2(91, 152)
 
 [node name="NPC" parent="." instance=ExtResource("2_qxrlw")]
-position = Vector2(182, 105)
+position = Vector2(110, 152)
